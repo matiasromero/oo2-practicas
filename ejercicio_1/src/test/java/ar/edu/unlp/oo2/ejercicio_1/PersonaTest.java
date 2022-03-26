@@ -20,7 +20,7 @@ public class PersonaTest {
 	}
     @Test
     public void testNombreCompleto() {
-        assertEquals("Glossing, James", james.getNombreCompleto());
+        assertEquals("Glossing, Jamesa", james.getNombreCompleto());
         assertEquals("van Rossum, Guido", guido.getNombreCompleto());
         
     }
