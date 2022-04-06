@@ -1,6 +1,7 @@
 package ar.edu.unlp.oo2.p3_ej1;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class ToDoItem {
@@ -8,12 +9,18 @@ public class ToDoItem {
 	private String name;
 	private Date startedDate;
 	private Duration workedTime;
+	private ArrayList<String> comments = new ArrayList<String>();
+	
 	public void changeState(ToDoItemState state) {
         this.state = state;
     }
 
     public ToDoItemState getState() {
         return state;
+    }
+    
+    public int getCommentsSize() {
+    	return this.comments.size();
     }
 /**
 * Instancia un ToDoItem nuevo en estado pending con <name> como nombre.
@@ -74,13 +81,17 @@ public class ToDoItem {
         	return this.state.workedTime();
         }
 
+public Duration getWorkedTime() {
+return this.workedTime;
+}
+
 
 /**
 * Agrega un comentario a la tarea siempre y cuando no haya finalizado. Caso
 * contrario no hace nada."
 */
         public void addComment(String comment) {
-        	this.state.addComment(comment);
+        	this.state.addComment(comment, this.comments);
         }      
 }
 

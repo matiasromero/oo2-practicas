@@ -1,6 +1,7 @@
 package ar.edu.unlp.oo2.p3_ej1;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class PausedState extends ToDoItemState {
 
@@ -26,13 +27,12 @@ public class PausedState extends ToDoItemState {
 	}
 
 	@Override
-	public void addComment(String comment) {
-		this.context.addComment(comment);
+	public void addComment(String comment, ArrayList<String> comments) {
+		comments.add(comment);
 	}
 
 	@Override
 	public Duration workedTime() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.calculateElapsedTime();
 	}
 }

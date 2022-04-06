@@ -1,6 +1,7 @@
 package ar.edu.unlp.oo2.p3_ej1;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class InProgressState extends ToDoItemState {
 	public InProgressState(ToDoItem context) {
@@ -23,8 +24,8 @@ public class InProgressState extends ToDoItemState {
 	}
 
 	@Override
-	public void addComment(String comment) {
-		this.context.addComment(comment);
+	public void addComment(String comment, ArrayList<String> comments) {
+		comments.add(comment);
 	}
 
 	@Override

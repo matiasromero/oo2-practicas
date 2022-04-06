@@ -2,6 +2,7 @@ package ar.edu.unlp.oo2.p3_ej1;
 
 import java.sql.Date;
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class PendingState extends ToDoItemState {
 	
@@ -27,13 +28,12 @@ public class PendingState extends ToDoItemState {
 	}
 
 	@Override
-	public void addComment(String comment) {
-		this.context.addComment(comment);
+	public void addComment(String comment, ArrayList<String> comments) {
+		comments.add(comment);
 	}
 
 	@Override
 	public Duration workedTime() {
 		throw new RuntimeException("El objeto ToDoItem no puede retornar el tiempo transcurrido porque aun no se inicio");
 	}
-
 }

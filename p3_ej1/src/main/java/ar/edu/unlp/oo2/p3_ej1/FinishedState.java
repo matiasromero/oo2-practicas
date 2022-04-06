@@ -1,6 +1,7 @@
 package ar.edu.unlp.oo2.p3_ej1;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class FinishedState extends ToDoItemState {
 	public FinishedState(ToDoItem context) {
@@ -26,13 +27,13 @@ public class FinishedState extends ToDoItemState {
 	}
 
 	@Override
-	public void addComment(String comment) {
+	public void addComment(String comment, ArrayList<String> comments) {
 		throw new RuntimeException("El objeto ToDoItem no puede agregar un comentnario ya que se encuentra en estado Finalized");
 		
 	}
 
 	@Override
 	public Duration workedTime() {
-		return context.workedTime();
+		return context.getWorkedTime();
 	}
 }
